@@ -1,4 +1,4 @@
-# FullStack2 Vue-project
+# Vue-project
 
 1. git clone "https..."
 2. cd  firstapp

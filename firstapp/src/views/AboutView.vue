@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, inject } from 'vue'
-import Person from '../components/Person.vue'
+import Person from '../components/Person/Person.vue'
 
 // IMPORTS
 // --------------------------------------------------------------------------------------------
@@ -61,13 +61,12 @@ function removePerson() {
     </div>
 
     <div class="people">
-      <Person v-for="person in people" :key="person.age" :person="person" />
+      <Person :img="person.id" v-for="person in people" :key="person.age" :person="person" />
     </div>
   </div>
 </template>
 
 <style lang='scss' scoped>
-
 .about {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -85,7 +84,10 @@ function removePerson() {
   flex-direction: column;
   gap: 10px;
 
-  label { display: block; }
+  label {
+    display: block;
+  }
+
   input {
     padding: 10px;
     border-radius: 5px;
@@ -112,7 +114,11 @@ function removePerson() {
       transition: 0.3s;
       color: black;
 
-      &:hover { background-color: darkgreen;  color: snow;   font-weight: bold;}
+      &:hover {
+        background-color: darkgreen;
+        color: snow;
+        font-weight: bold;
+      }
     }
   }
 
@@ -129,9 +135,11 @@ function removePerson() {
   opacity: 0;
   transform: translateX(-100%);
 }
+
 .v-enter-active {
   transition: 0.5s;
 }
+
 .v-enter-to {
   opacity: 1;
   transform: translateX(0);
@@ -141,9 +149,11 @@ function removePerson() {
   opacity: 0;
   transform: translateX(100%);
 }
+
 .v-leave-active {
   transition: 0.5s;
 }
+
 .v-leave-from {
   opacity: 1;
   transform: translateX(0);

@@ -45,7 +45,7 @@ export default {
       // in Vue we could use require.context
       // but in vite we can't use it
       // so we use this method to get the image path
-      return new URL(`../../assets/card_images/img${this.imgId}.jpg`, import.meta.url).href
+      return new URL(`../../assets/imgs/img${this.imgId}.jpg`, import.meta.url).href
     }
   }
 }
@@ -56,6 +56,7 @@ export default {
   transition: 0.3s;
   box-sizing: border-box;
 }
+
 .card {
   background-color: #fff;
   border-radius: 5px;
@@ -73,10 +74,12 @@ export default {
 .card p {
   margin-bottom: 0.5rem;
 }
+
 img {
   width: 100%;
   height: 150px;
 }
+
 .favorite {
   position: absolute;
   top: 0;
@@ -85,6 +88,7 @@ img {
   text-shadow: 2px 2px 10px red, -2px -2px 10px red;
   color: red;
 }
+
 .thumb-up {
   border: none;
   outline: none;
@@ -97,24 +101,30 @@ img {
   cursor: pointer;
   transition: 0.3s;
 }
+
 .thumb-up:hover {
   background-color: lightgray;
 }
+
 .thumb-up:active {
   background-color: green;
 }
+
 .card-date {
   float: right;
 }
+
 @media (min-width: 700px) {
   .card {
     width: 100%;
     margin: 0 auto;
   }
 }
+
 a {
   text-decoration: none;
 }
+
 .btn {
   padding: 0.2em 0.5em;
   border-radius: 5px;
@@ -124,16 +134,19 @@ a {
   font-size: 1rem;
   font-weight: bold;
 }
+
 .btn:hover {
   opacity: 0.7;
 }
+
 .danger {
   background-color: #ff0000;
 }
+
 .primary {
   background-color: #4caf50;
 }
+
 footer {
   text-align: right;
-}
-</style>
+}</style>
